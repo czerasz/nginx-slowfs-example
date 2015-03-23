@@ -1,0 +1,6 @@
+nginx:
+  build: .
+  volumes:
+    - ./nfs-dummy:/data/nfs
+  ports: 
+    - "8000:80"
