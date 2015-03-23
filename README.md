@@ -41,9 +41,12 @@ Cache file structure:
         └── 27
             └── 2bba799df783554d8402137ca199a271
 
+> **Note**
+> <br/>You might change the container name (`nginxslowfs_nginx_1`). Search for the container name on your machine with `docker-compose ps`
+
 Cached file content:
 
-    $ docker exec nginxslowfs_nginx_1 cat /data/cache/1/27/2bba799df783554d8402137ca199a271 
+    $ docker exec nginxslowfs_nginx_1 cat /data/cache/1/27/2bba799df783554d8402137ca199a271
     cf...=>
     KEY: /test-file.txt
     
