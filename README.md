@@ -9,27 +9,19 @@ This repository shows an example usage of the Nginx slowfs module.
 ## Requirements
 
 - [Docker](http://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
 ## Setup
 
-Build container
+Start container
 
-    docker build -t 'czerasz/nginx-slowfs' .
-
-Run example container
-
-    docker run \
-       --rm \
-       -p 8000:80 \
-       -v `pwd`/nfs-dummy:/data/nfs \
-       --name 'nginx_slowfs_example_container' \
-       czerasz/nginx-slowfs
+    docker-compose up
 
 ## Example
 
 Test request:
 
-    $ curl -i 'localhost:8080/test-file.txt'
+    $ curl -i 'localhost:8000/test-file.txt'
     HTTP/1.1 200 OK
     Server: nginx/1.6.2
     Date: Mon, 23 Mar 2015 13:35:07 GMT
@@ -43,7 +35,7 @@ Test request:
 
 Cache file structure:
 
-    $ docker exec nginx_slowfs_example_container tree -A /data/cache/
+    $ docker exec nginxslowfs_nginx_1 tree -A /data/cache/
     /data/cache/
     └── 1
         └── 27
@@ -51,7 +43,7 @@ Cache file structure:
 
 Cached file content:
 
-    $ docker exec nginx_slowfs_example_container cat /data/cache/1/27/2bba799df783554d8402137ca199a271 
+    $ docker exec nginxslowfs_nginx_1 cat /data/cache/1/27/2bba799df783554d8402137ca199a271 
     cf...=>
     KEY: /test-file.txt
     
