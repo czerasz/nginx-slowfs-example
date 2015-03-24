@@ -4,7 +4,7 @@ This repository shows an example usage of the Nginx slowfs module.
 
 ## Overview
 
-![logstash architecture](./documentation/nginx-slowfs.png "nginx slowfs overview")
+![nginx slowfs overview](./documentation/nginx-slowfs.png "nginx slowfs overview")
 
 ## Requirements
 
